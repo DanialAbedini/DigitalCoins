@@ -1,6 +1,6 @@
 import React from 'react';
 
-import snniper from "./assest/spinner.gif";
+import snniper from "../assest/spinner.gif";
 
 const Loading = () => {
     return (
