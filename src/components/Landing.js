@@ -4,6 +4,9 @@ import { getCoins } from '../apis/api';
 import Loading from './Loading';
 import Coin from './shared/Coin';
 
+// Styles
+import styles from "./Landing.module.css";
+
 const Landing = () => {
   const [coins, setCoins] = useState([]);
   const [search,setSearch]=useState("");
@@ -21,10 +24,11 @@ const Landing = () => {
 
   const filteredCoin = coins.filter(coin=>coin.name.toUpperCase().includes(search.toUpperCase()));
 
-  return <>{coins.length ?  <div>
-    <input placeholder="Search" type="text" value={search} onChange={searchHandler}/>
-    {filteredCoin.map(coin=><Coin key={coin.id} data={coin} />)}
-    </div> : <Loading />}</>;
+  return <>
+  <input className={styles.input} placeholder="Search" type="text" value={search} onChange={searchHandler}/>
+  {coins.length ?  <div className={styles.coinContainer}>
+  {filteredCoin.map(coin=><Coin key={coin.id} data={coin} />)}
+  </div> : <Loading />}</>;
 };
 
 export default Landing;

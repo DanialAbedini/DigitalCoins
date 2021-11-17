@@ -1,14 +1,14 @@
 import React from 'react';
-
+import styles from "./Coin.module.css";
 const Coin = ({data}) => {
     return (
-        <div style={{margin:"2rem 10rem",display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-            <img style={{width:"100px"}} src={data.image} alt="" />
-            <span>{data.name}</span>
-            <span>{data.symbol.toUpperCase()}</span>
-            <span>{data.current_price.toLocaleString()} $</span>
-            <span>{data.price_change_percentage_24h}</span>
-            <span>{data.market_cap.toLocaleString()} $</span>
+        <div className={styles.container}>
+            <img className={styles.image} src={data.image} alt="" />
+            <span className={styles.name}>{data.name}</span>
+            <span className={styles.symbol}>{data.symbol.toUpperCase()}</span>
+            <span className={styles.currentPrice}>{data.current_price.toLocaleString()} $</span>
+            <span className={data.price_change_percentage_24h > 0 ? styles.greenPriceChange : styles.redPriceChange}>{data.price_change_percentage_24h}</span>
+            <span className={styles.marketCap}>{data.market_cap.toLocaleString()} $</span>
         </div>
     );
 };
