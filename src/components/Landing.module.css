@@ -23,3 +23,37 @@
   background: white;
   box-shadow: rgba(74, 74, 74, 0.24) 0px 3px 8px;
 }
+
+/* ! Paginate */
+.paginateContainer{
+  list-style: none;
+  width: fit-content;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagiante{
+  display: block;
+  margin: 0 .5rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  background-color: #c7bfbf;
+  border-radius: 10px;
+}
+.btnpaginate{
+padding: .5rem 2rem;
+font-size: .875rem;
+font-weight: bold;
+margin: 0 .5rem;
+border-radius: 20px;
+cursor: pointer;
+transition:all .3s ease-in;
+}
+.btnpaginate:hover{
+  background-color: silver;
+  /* color: #f6f6f6; */
+}
